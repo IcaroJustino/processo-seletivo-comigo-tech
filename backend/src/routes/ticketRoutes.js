@@ -1,7 +1,7 @@
 const express = require('express');
 const ticketController = require('../controllers/ticketController');
 const { authenticateToken } = require('../middleware/authMiddleware');
-const { checkRole } = require('../middlewares/checkRole');
+const { checkRole } = require('../middleware/roleMiddleware');
 const router = express.Router();
 
 router.post('/ticket', authenticateToken, ticketController.createTicket);

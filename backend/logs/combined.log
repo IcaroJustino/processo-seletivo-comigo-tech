@@ -1,0 +1,13 @@
+2024-09-07T14:18:11.334Z info: User created
+2024-09-07T18:26:16.901Z error: User not found
+2024-09-07T18:26:26.740Z info: User created
+2024-09-07T18:26:33.704Z info: User logged in: admin@email.com
+2024-09-07T18:39:23.766Z info: User logged in: admin@email.com
+2024-09-07T18:43:50.005Z error: User already exists
+2024-09-07T18:43:57.463Z info: User created
+2024-09-07T18:44:07.432Z info: User logged in: superadmin@email.com
+2024-09-07T18:46:02.962Z warn: No token provided
+2024-09-07T18:46:43.146Z warn: No token provided
+2024-09-07T18:46:49.642Z info: User logged in: superadmin@email.com
+2024-09-07T19:33:46.753Z info: User logged in: superadmin@email.com
+2024-09-07T20:28:42.211Z info: User logged in: superadmin@email.com

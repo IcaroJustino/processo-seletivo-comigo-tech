@@ -9,12 +9,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
+  id       String   @id @default(uuid())
   name     String
   email    String   @unique
   password String
@@ -23,12 +23,51 @@ model User {
 }
 
 model Ticket {
-  id          Int    @id @default(autoincrement())
-  title       String
+  id            String       @id @default(uuid())
+  tag           Int          @default(autoincrement())
+  title         String
+  description   String?
+  userId        String
+  hasContact    Boolean?
+  contactId     String?
+  reasonId      String
+  veichleId     String
+  statusId      String
+  estimatedTime DateTime //sempre são 3 dias uteis
+  status        Status       @relation(fields: [statusId], references: [id])
+  veichle       Veichle      @relation(fields: [veichleId], references: [id])
+  reason        TicketReason @relation(fields: [reasonId], references: [id])
+  user          User         @relation(fields: [userId], references: [id])
+  contact       Contact?     @relation(fields: [contactId], references: [id])
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model Status {
+  id     String   @id @default(uuid())
+  name   String
+  Ticket Ticket[]
+}
+
+model Contact {
+  id       String   @id @default(uuid())
+  typeName String
+  Ticket   Ticket[]
+}
+
+model TicketReason {
+  id          String   @id @default(uuid())
+  reason      String
   description String
-  status      String
-  userId      Int
-  user        User   @relation(fields: [userId], references: [id])
+  Ticket      Ticket[]
+}
+
+model Veichle {
+  id     String   @id @default(uuid())
+  plate  String
+  model  String
+  color  String
+  Ticket Ticket[]
 }
 
 enum Role {
