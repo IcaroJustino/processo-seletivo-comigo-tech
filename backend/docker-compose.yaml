@@ -3,11 +3,11 @@ services:
   backend:
     image: comigobackend:latest
     ports:
-      - "3000:3000"
+      - "8000:3000"
     environment:
-      - DATABASE_URL=postgresql://user:password@host:port/database
+      - DATABASE_URL=postgresql://icarojustino:wo1roW9i20F1@20.115.81.3:5433/icarodb?schema=comigo
       - PORT=3000
-      - JWT_SECRET = 8j3K5mN2P7qR9sT1vW4xY6z0B5cD8eF1gH4iJ7kL2mN5oP8qR1sT4vW7xY0zB3c
+      - JWT_SECRET=8j3K5mN2P7qR9sT1vW4xY6z0B5cD8eF1gH4iJ7kL2mN5oP8qR1sT4vW7xY0zB3c
     volumes:
       - .:/app
       - /app/node_modules
