@@ -5,7 +5,8 @@ FROM node
 WORKDIR /app
 
 # Copie o package.json e o package-lock.json para o diretório de trabalho
-COPY package*.json ./
+COPY  package.json ./
+COPY  package-lock.json ./
 
 # Instale as dependências do projeto
 RUN npm install
@@ -13,8 +14,19 @@ RUN npm install
 # Copie o restante do código do projeto para o diretório de trabalho
 COPY . .
 
+
+RUN npx prisma generate
+
+# Defina a variável de ambiente para o banco de dados
+# Comando para iniciar o aplicativo e migrar o banco de dados
+
+RUN npm install -g concurrently
+RUN npm install --save-dev jest supertest
+
 # Exponha a porta que a aplicação irá rodar
-EXPOSE 3000
+RUN npm run test
+EXPOSE 3000 3001 
+
 
 # Comando para iniciar a aplicação
 CMD ["npm", "start"]

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "concurrently \"node src/index.js\" \"node src/monitoring.js\""
   },
   "keywords": [],
@@ -19,5 +19,9 @@
     "prisma": "^5.19.1",
     "prom-client": "^15.1.3",
     "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }

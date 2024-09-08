@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  backend:
+    image: comigobackend:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@host:port/database
+      - PORT=3000
+      - JWT_SECRET = 8j3K5mN2P7qR9sT1vW4xY6z0B5cD8eF1gH4iJ7kL2mN5oP8qR1sT4vW7xY0zB3c
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  monitoring:
+    build:
+      context: .
+      dockerfile: DOCKERFILE
+    command: node src/monitoring.js
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - MONITORING_PORT=3001
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./src/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+volumes:
+  backendlogs:

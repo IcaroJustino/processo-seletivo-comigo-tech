@@ -11,3 +11,82 @@
 2024-09-07T18:46:49.642Z info: User logged in: superadmin@email.com
 2024-09-07T19:33:46.753Z info: User logged in: superadmin@email.com
 2024-09-07T20:28:42.211Z info: User logged in: superadmin@email.com
+2024-09-07T22:43:17.481Z warn: No token provided
+2024-09-07T22:50:46.111Z warn: No token provided
+2024-09-07T22:51:47.320Z warn: Invalid token
+2024-09-07T22:51:47.326Z warn: No token provided
+2024-09-07T22:53:03.132Z warn: Invalid token
+2024-09-07T22:53:03.136Z warn: Invalid token
+2024-09-07T22:58:04.828Z warn: Invalid token
+2024-09-07T22:58:28.317Z warn: Invalid token
+2024-09-07T22:58:52.046Z warn: Invalid token
+2024-09-07T22:59:32.435Z warn: Invalid token
+2024-09-07T23:00:15.147Z warn: Invalid token
+2024-09-07T23:16:34.672Z warn: Invalid token
+2024-09-07T23:16:57.804Z warn: Invalid token
+2024-09-07T23:17:32.284Z warn: Invalid token
+2024-09-07T23:17:44.239Z warn: Invalid token
+2024-09-07T23:18:10.541Z warn: Invalid token
+2024-09-07T23:18:38.551Z warn: Invalid token
+2024-09-07T23:19:04.691Z warn: Invalid token
+2024-09-07T23:19:42.419Z warn: Invalid token
+2024-09-07T23:21:30.767Z warn: Invalid token
+2024-09-07T23:21:53.672Z warn: Invalid token
+2024-09-07T23:41:07.831Z info: User logged in: superadmin@email.com
+2024-09-07T23:41:22.057Z info: User logged in: superadmin@email.com
+2024-09-07T23:41:34.696Z info: User logged in: superadmin@email.com
+2024-09-07T23:42:30.674Z info: User logged in: superadmin@email.com
+2024-09-07T23:42:47.523Z info: User logged in: superadmin@email.com
+2024-09-07T23:43:19.827Z info: User logged in: superadmin@email.com
+2024-09-07T23:43:43.965Z info: User logged in: superadmin@email.com
+2024-09-07T23:43:43.979Z warn: No token provided
+2024-09-07T23:44:07.705Z info: User logged in: superadmin@email.com
+2024-09-07T23:44:07.720Z warn: No token provided
+2024-09-07T23:44:43.239Z info: User logged in: superadmin@email.com
+2024-09-07T23:45:04.299Z info: User logged in: superadmin@email.com
+2024-09-07T23:45:56.196Z info: User logged in: superadmin@email.com
+2024-09-07T23:45:56.585Z warn: No token provided
+2024-09-07T23:46:44.682Z info: User logged in: superadmin@email.com
+2024-09-07T23:46:45.046Z warn: No token provided
+2024-09-07T23:46:59.049Z info: User logged in: superadmin@email.com
+2024-09-07T23:46:59.412Z warn: No token provided
+2024-09-07T23:48:18.519Z info: User logged in: superadmin@email.com
+2024-09-07T23:48:18.883Z warn: No token provided
+2024-09-07T23:53:42.532Z info: User logged in: superadmin@email.com
+2024-09-07T23:53:42.868Z warn: No token provided
+2024-09-07T23:53:45.942Z warn: No token provided
+2024-09-07T23:53:46.456Z warn: No token provided
+2024-09-07T23:54:20.279Z info: User logged in: superadmin@email.com
+2024-09-07T23:54:20.644Z warn: No token provided
+2024-09-07T23:54:23.368Z warn: No token provided
+2024-09-07T23:55:32.199Z info: User logged in: superadmin@email.com
+2024-09-07T23:55:32.559Z warn: No token provided
+2024-09-07T23:55:35.264Z warn: No token provided
+2024-09-07T23:56:22.261Z info: User logged in: superadmin@email.com
+2024-09-07T23:56:22.623Z warn: No token provided
+2024-09-07T23:56:25.317Z warn: No token provided
+2024-09-07T23:59:59.467Z info: User logged in: superadmin@email.com
+2024-09-07T23:59:59.831Z warn: No token provided
+2024-09-08T00:00:03.379Z warn: No token provided
+2024-09-08T00:01:57.258Z info: User logged in: superadmin@email.com
+2024-09-08T00:01:57.600Z warn: No token provided
+2024-09-08T00:02:01.539Z warn: No token provided
+2024-09-08T00:02:55.132Z info: User logged in: superadmin@email.com
+2024-09-08T00:02:55.524Z warn: No token provided
+2024-09-08T00:03:27.585Z info: User logged in: superadmin@email.com
+2024-09-08T00:03:27.945Z warn: No token provided
+2024-09-08T00:04:50.650Z info: User logged in: superadmin@email.com
+2024-09-08T00:04:51.010Z warn: No token provided
+2024-09-08T00:05:25.985Z info: User logged in: superadmin@email.com
+2024-09-08T00:05:26.328Z warn: No token provided
+2024-09-08T00:06:09.187Z info: User logged in: superadmin@email.com
+2024-09-08T00:06:09.551Z warn: No token provided
+2024-09-08T00:06:44.744Z info: User logged in: superadmin@email.com
+2024-09-08T00:06:45.130Z warn: No token provided
+2024-09-08T00:07:50.853Z info: User logged in: superadmin@email.com
+2024-09-08T00:07:51.388Z warn: No token provided
+2024-09-08T00:08:21.091Z info: User logged in: superadmin@email.com
+2024-09-08T00:08:21.635Z warn: No token provided
+2024-09-08T00:08:55.034Z info: User logged in: superadmin@email.com
+2024-09-08T00:08:55.534Z warn: No token provided
+2024-09-08T00:08:59.568Z warn: No token provided
