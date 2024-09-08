@@ -10,6 +10,14 @@ const statusRoutes = require('./routes/statusRoutes');
 const app = express();
 app.use(bodyParser.json());
 
+// Enable CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 // Rotas de autenticação
 app.use('/auth', authRoutes);
 
@@ -19,9 +27,6 @@ app.use('/admin', contactRoutes);
 app.use('/admin', reasonRoutes);
 app.use('/admin', veichleRoutes);
 app.use('/admin', statusRoutes);
-
-
-
 
 // Rotas de tickets
 app.use('/api', ticketRoutes);

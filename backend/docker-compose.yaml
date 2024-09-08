@@ -3,7 +3,7 @@ services:
   backend:
     image: comigobackend:latest
     ports:
-      - "8000:3000"
+      - "3000:3000"
     environment:
       - DATABASE_URL=postgresql://icarojustino:wo1roW9i20F1@20.115.81.3:5433/icarodb?schema=comigo
       - PORT=3000
