@@ -40,7 +40,7 @@ export default function App() {
   ];
 
   const protectedRoutes = [
-    { path: '/', component: <Dashboard/> },
+    { path: '/', component: <Dashboard /> },
   ];
 
 
