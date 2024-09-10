@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { getrole } from "../api/services/authService";
 import Header from "../components/header/header";
 import NavBar from "../components/nav/nav";
@@ -10,6 +10,7 @@ import list from '../assets/icons/list_view.svg'
 import gridview from '../assets/icons/block_view.svg'
 import compactview from '../assets/icons/compact_view.svg'
 import kambanview from '../assets/icons/kanbam_view.svg'
+import TicketsList from "../components/dashboard/ticketList";
 
 
 export default function Dashboard() {
@@ -34,17 +35,20 @@ export default function Dashboard() {
 
 
 
-    useMemo(async () => {
-        const response = await getrole();
-        const status = await getStatus();
-        const reasons = await getReasons();
-        const veichles = await getVeichles();
-        const FetchTickets = await getTickets();
-        setTickets(FetchTickets);
-        setVeichles(veichles);
-        setReasons(reasons);
-        setStatus(status);
-        setRoleToken(response.role);
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getrole();
+            const status = await getStatus();
+            const reasons = await getReasons();
+            const veichles = await getVeichles();
+            const FetchTickets = await getTickets();
+            setTickets(FetchTickets);
+            setVeichles(veichles);
+            setReasons(reasons);
+            setStatus(status);
+            setRoleToken(response.role);
+        };
+        fetchData();
     }, []);
 
 
@@ -57,11 +61,10 @@ export default function Dashboard() {
             order: orderFilter
         }
         const fetchFilteredTickets = async (options: { status: any; reason: any; veichle: any; period: any; order: any; }) => {
-            const response = await getFilteredTickets(options);
-            setTickets(response);
+            // const response = await ge(options);
+            // setTickets(response);
         }
         fetchFilteredTickets(filters);
-        console.log(periodFilter)
     }, [statusFilter, reasonFilter, veichleFilter, periodFilter, orderFilter]);
 
 
@@ -102,7 +105,6 @@ export default function Dashboard() {
     const handlechange = (event: any) => {
         event.preventDefault();
         const filteoption = (event.target as HTMLFormElement).value;
-        console.log(filteoption)
         setPeriodFilter((prevFilters: any) => {
             const updatedFilters = [...prevFilters, filteoption];
             if (updatedFilters.length > 1) {
@@ -131,50 +133,6 @@ export default function Dashboard() {
         setOrderFilter([]);
     }
 
-    const mockupTickets = [
-        {
-            id: 1,
-            title: 'Ticket 1',
-            status: 'Aberto',
-            reason: 'Manutenção',
-            veichle: 'Caminhão',
-            created_at: '2021-09-06',
-            updated_at: '2021-09-06',
-            user: 'João da Silva',
-            description: 'Descrição do ticket'
-        },
-        {
-            id: 2,
-            title: 'Ticket 2',
-            status: 'Fechado',
-            reason: 'Manutenção',
-            veichle: 'Caminhão',
-            created_at: '2021-09-06',
-            updated_at: '2021-09-06',
-            user: 'João da Silva',
-            description: 'Descrição do ticket'
-        },
-        {
-            id: 3,
-            title: 'Ticket 3',
-            status: 'Aberto',
-            reason: 'Manutenção',
-            veichle: 'Caminhão',
-            created_at: '2021-09-06',
-            updated_at: '2021-09-06',
-            user: 'João da Silva',
-            description: 'Descrição do ticket'
-        },
-        {
-            id: 4,
-            title: 'Ticket 4',
-            status: 'Fechado',
-            reason: 'Manutenção',
-            veichle: 'Caminhão',
-            created_at: '2021-09-06',
-            updated_at: '2021-09-06',
-        }
-    ]
 
 
     return (
@@ -279,7 +237,7 @@ export default function Dashboard() {
                                         value={reason.id}
                                         className="text-black"
                                     >
-                                        {reason.name}
+                                        {reason.reason}
                                     </option>
                                 );
                             })}
@@ -301,7 +259,7 @@ export default function Dashboard() {
                                         value={veichle.id}
                                         className="text-black"
                                     >
-                                        {veichle.name}
+                                        {veichle.model}
                                     </option>
                                 );
                             })}
@@ -319,7 +277,7 @@ export default function Dashboard() {
                     </div>
                 </nav>
                 <div>
-                    Listagem
+                    <TicketsList tickets={tickets} />
                 </div>
             </div>
         </main>

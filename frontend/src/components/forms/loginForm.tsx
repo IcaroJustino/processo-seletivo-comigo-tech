@@ -21,12 +21,14 @@ export default function LoginForm() {
             return;
         }
         const response = await loginService(email, password);
+        setLoading(true);
         if (response.status === 400) {
             setError(true);
             setErrormsg('Email ou senha inválidos');
-            return;
+            setTimeout(() => {
+                setLoading(false);
+            }, 3000);
         }
-        setLoading(true);
         setTimeout(() => {
             setLoading(false);
             setError(false);

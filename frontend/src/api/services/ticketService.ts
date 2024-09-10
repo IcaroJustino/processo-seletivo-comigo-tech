@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { api } from "../api";
 
 export const getTickets = async () => {
@@ -11,7 +12,7 @@ export const getTickets = async () => {
 
 export const getStatus = async () => {
   try {
-    const { data } = await api.get("/api/status");
+    const { data } = await api.get("/admin/status");
     return data;
   } catch (error) {
     return error;
@@ -20,7 +21,7 @@ export const getStatus = async () => {
 
 export const getTypes = async () => {
   try {
-    const { data } = await api.get("/api/types");
+    const { data } = await api.get("/admin/contacts");
     return data;
   } catch (error) {
     return error;
@@ -29,7 +30,7 @@ export const getTypes = async () => {
 
 export const getReasons = async () => {
   try {
-    const { data } = await api.get("/api/reasons");
+    const { data } = await api.get("/admin/reasons");
     return data;
   } catch (error) {
     return error;
@@ -38,7 +39,7 @@ export const getReasons = async () => {
 
 export const getClients = async () => {
   try {
-    const { data } = await api.get("/api/clients");
+    const { data } = await api.get("/admin/clients");
     return data;
   } catch (error) {
     return error;
@@ -47,7 +48,7 @@ export const getClients = async () => {
 
 export const getVeichles = async () => {
   try {
-    const { data } = await api.get("/api/veichles");
+    const { data } = await api.get("/admin/veichles");
     return data;
   } catch (error) {
     return error;
@@ -58,7 +59,7 @@ export const getVeichles = async () => {
 export const getFilteredTickets = async (filters: any) => {
   try {
     const { data } = await api.post("/api/tickets/filter", filters);
-    return data;
+    return [];
   } catch (error) {
     return error;
   }
