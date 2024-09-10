@@ -13,3 +13,12 @@ export const loginService = async (email: string, password: string) => {
     return error;
   }
 };
+
+export const getrole = async () => {
+  try {
+    const { data } = await api.get("/auth/me");
+    return data;
+  } catch (error) {
+    return error;
+  }
+};

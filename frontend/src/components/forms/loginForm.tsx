@@ -2,12 +2,8 @@
 import { useState } from "react";
 import { loginService } from "../../api/services/authService";
 import Loader from "../loader/loader";
-import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
-
-
-    const navigate = useNavigate();
 
     const [error, setError] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
@@ -34,7 +30,7 @@ export default function LoginForm() {
         setTimeout(() => {
             setLoading(false);
             setError(false);
-            navigate("/", { replace: true })
+            window.location.href = '/';
         }, 3000);
         console.log(email, password);
     }

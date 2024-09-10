@@ -29,7 +29,10 @@ export default {
       },
       maxWidth:{
         '1920': '1920px',
-      }
+      },
+      minHeight:{
+        '17': '4.5rem',
+      },
     },
   },
   plugins: [],

@@ -2,8 +2,7 @@
 import { getToken } from "./api/services/authService";
 import Login from "./pages/login";
 import Page404 from "./pages/404";
-import AdminDashboard from "./pages/adminDashboard";
-//import AttendantDashboard from "./pages/attendantDashboard";
+import Dashboard from "./pages/dashboard";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { PrivateRoute } from "./api/types/config";
 import { ReactNode } from "react";
@@ -12,12 +11,12 @@ export default function App() {
 
   //caso o usuario não esteja logado redireciona para a pagina de login
   function PrivateRoute({ children }: PrivateRoute) {
-    return getToken() ? children : <Navigate to="/" replace />;
+    return getToken() ? children : <Navigate to="/login" replace />;
   }
 
   //rota caso o usuario ja esteja logado 
   function ProtectedLogin({ children }: PrivateRoute) {
-    return getToken() ? <Navigate to="/dashboard" replace /> : children;
+    return getToken() ? <Navigate to="/" replace /> : children;
   }
 
   const getProtectedRoute = (index: number, path: string, Component: ReactNode) => {
@@ -37,11 +36,11 @@ export default function App() {
   }
 
   const unprotectedRoutes = [
-    { path: '/', component: <Login /> },
+    { path: '/login', component: <Login /> },
   ];
 
   const protectedRoutes = [
-    { path: '/dashboard', component: <AdminDashboard /> },
+    { path: '/', component: <Dashboard/> },
   ];
 
 
